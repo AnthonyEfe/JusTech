@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Login | Justech
+{% endblock %}
+
+{% block content %}
+<div class="container py-4 auth-container d-flex justify-content-center align-items-center">
+    <div class="auth-contain border p-4">
+        <h5 class="text-center">Justech</h5>
+        <div class="error text-danger text-center {{errormsg}}"><p><i class="bi bi-info-circle"></i> Invalid Login or Password</p></div>
+        <form action="" method="POST" class="mt-sm-2">
+            <div class="form-group mt-3">
+                <label for="">Email Address</label>
+                <input type="text" class="form-control p-2" placeholder="youremail@gmail.com" name="email">
+            </div>
+            <div class="form-group mt-2">
+                <label for="">Password</label>
+                <input type="password" class="form-control p-2" placeholder="Password" name="pass">
+            </div>
+            <button type="submit" class="btn mt-3 bg-main w-100 p-2">Login</button>
+        </form>
+        <div class="p-2 text-center">
+            <p><a href="/signup">Forget Password</a></p>
+        </div>
+        <div class="p-2 text-center">
+            <p>New to the App? <a href="/signup">Signup</a></p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content%}

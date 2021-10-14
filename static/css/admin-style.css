@@ -1,0 +1,10 @@
+.bg-main{
+    background: #111;
+    color: #fff;
+}
+.home .stats .name{
+    font-size: 1.2em;
+}
+.home .stats .value{
+    font-size: 3em;
+}

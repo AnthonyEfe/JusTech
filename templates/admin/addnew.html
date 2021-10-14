@@ -1,0 +1,38 @@
+{% extends '/admin/dashboard.html'%}
+
+{% block content %}
+
+<section class="home">
+    <div class="container">
+        <div class="row m-0">
+            <div class="col-md-7">
+                <div class="p-4">
+                    <h3>Upload Stock</h3>
+                    <form action="" method="post">
+                        <div class="mb-3">
+                            <label for="">Stock Name</label>
+                            <input type="text" class="form-control" name="stockname" placeholder="Stock name" required >
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Stock Description</label>
+                            <textarea type="text" class="form-control" name="stockdes"  placeholder="Stock Description" rows="7" required ></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Stock Image(link)</label>
+                            <input type="text" class="form-control" name="stockimg"  placeholder="Stock Image" required >
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Stock price</label>
+                            <input type="text" class="form-control" name="stockprice"  placeholder="Stock Price" required >
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-dark shadow-0">Upload</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content%}

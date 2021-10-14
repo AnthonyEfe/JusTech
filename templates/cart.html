@@ -1,0 +1,116 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Cart | Justech
+{% endblock %}
+
+{% block content %}
+
+<section class="cart">
+
+    <div class="container">
+        <div class="py-4 d-flex justify-content-center text-center align-items-center">
+            <div>
+                <h2>Checkout</h2>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col-md-6 pt-4">
+                <div class="p-4 checkout">
+                    <h3>Payment Details</h3>
+                    <form class="row g-3" action="/checkout" method="POST">
+                        <div class="col-12">
+                            <label class="form-label">Name on Card</label>
+                            <input type="text" required class="form-control white-smoke" name="cardname" id="cardname"
+                                placeholder="Card Name">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Card Number</label>
+                            <input type="number" required class="form-control white-smoke" name="cardnum" id="cardnum"
+                                placeholder="1234-5678-9876-5432">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Expiration</label>
+                            <div class="row m-0">
+                                <div class="col-6 px-0 pe-1">
+                                    <input type="number" required class="form-control white-smoke" name="expmonth" id="expmonth"
+                                        placeholder="MM">
+                                </div>
+                                <div class="col-6 px-0 ps-1">
+                                    <input type="number" required class="form-control white-smoke" name="expyear" id="expyear"
+                                        placeholder="YY">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">CVV</label>
+                            <input type="number" required class="form-control white-smoke" name="cvv" id="cvv"
+                                placeholder="123">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn bg-main w-100">CHECKOUT</button>
+                        </div>
+                        <input type="hidden" name="total" value="{{ total }}">
+                        <input type="hidden" name="len" value="{{ cartLen }}">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="white-smoke p-4">
+
+                    {% if cart %}
+
+                        {% for stock in cart %}
+
+                        <div class="card rounded-o shadow-0 mb-2">
+                            <di class="row m-0">
+                                <div class="col-sm-6">
+                                    <div class="img-contain">
+                                        <img src="{{stock[7]}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 d-flex align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">{{stock[5]}}</h5>
+                                        <p class="mb-1 line-clamp">{{stock[6]}}</p>
+                                        <p class="mb-1">{{stock[8]}}</p>
+                                        <a href="/remove-cart?stockId={{stock[0]}}" class="btn bg-main">remove</a>
+                                    </div>
+                                </div>
+                            </di>
+                        </div>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <div class="no-cart-contain d-flex justify-content-center align-items-center">
+                            <div class="w-auto text-center">
+                                <i class="bi bi-exclamation-circle"></i>
+                                <p>No stock in cart</p>
+                            </div>
+                        </div>
+
+                    {% endif %}
+                </div>
+                <div class="bg-white p-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6>Subtotal :</h6>
+                        <p>$ {{ subtotal }}</p>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6>Tax :</h6>
+                        <p>$ {{ tax }}</p>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6>Total :</h6>
+                        <p>$ {{ total }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock content%}

@@ -1,0 +1,79 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Home | Justech
+{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <div class="d-flex justify-content-center home-welcome-contain align-items-center">
+        <div class="home-welcome">
+            <p class="home-welcome-text wow animate__animated animate__fadeInDown animate_1s">Justech is the trading name of Justus Anthony Technologies Limited.
+
+                We strive to deliver the benefits of technology to individual and his communities. We aim to achieve
+                this by partnering with local and international resources to deliver the optimal solution for our
+                customers.
+
+            </p>
+            <div class="mb-3 d-flex justify-content-center wow animate__animated animate__fadeInUp animate_1s">
+                <form action="/shop" method="POST">
+                    <div class="home-search d-flex">
+                        <input type="text" class="form-group p-2 border-0" name="inputSearch" placeholder="Search Gadgets">
+                        <button class="btn bg-dark rounded-0 search-btn" name="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="p-4">
+    <div class="container">
+        <div class="m-0 row category">
+            <div class="col-md-6">
+                <div class="m-2 bg-danger home-split wow animate__animated animate__fadeInLeft animate_1s">
+                    <img src="https://images.unsplash.com/photo-1619037961428-e6410a7afd38?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnR3YXRjaHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                </div>
+                <div class="m-2 bg-danger home-split wow animate__animated animate__fadeInUp animate_1s">
+                    <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aXBob25lfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="m-2 bg-danger home-full wow animate__animated animate__fadeInRight animate_1s">
+                    <img src="https://images.unsplash.com/photo-1587614297882-0954a02d57f7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWljcm9zb2Z0JTIwbGFwdG9wfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container best-selling">
+    <h3 class="text-center m-2">
+        Best Selling
+    </h3>
+    <div class="row m-0">
+        {% for stock in stocks %}
+        <div class="col-md-4 col-sm-6 p-4">
+            <div class="selling-item wow animate__animated animate__zoomIn animate_1s">
+                <div class="selling-item-img mb-1">
+                    <div class="overlay"></div>
+                    <img src="{{stock[3]}}" alt="">
+                    <a href="/add-cart?stockId={{stock[0]}}&prevPage=/" class="cart-btn p-2 text-center rounded-2 border"><i class="bi bi-plus"></i> Add To Cart</a>
+                </div>
+                <div>
+                    <h5 class="mb-1">{{stock[1]}}</h5>
+                    <p class="mb-1 line-clamp">{{stock[2]}}</p>
+                    <p class="mb-1">${{ stock[4] }}</p>
+                    <a href="/add-cart?stockId={{stock[0]}}&prevPage=/" class="btn bg-main rounded-0 shadow-0 other-cart-btn">Add to cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content%}

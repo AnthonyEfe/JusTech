@@ -1,0 +1,37 @@
+{% extends '/admin/dashboard.html'%}
+
+{% block content %}
+
+<section class="home">
+    <div class="container">
+        <h3 class="mb-3">All Stocks</h3>
+        <div class="row m-0">
+            <div class="col-sm-10 m-auto p-2 border table-responsive-sm">
+                <table class="table table-striped" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Stock Name</th>
+                            <th>Stock Description</th>
+                            <th>Stock Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for stock in stocks%}
+                        <tr>
+                            <td>{{stock[0]}}</td>
+                            <td>{{stock[1]}}</td>
+                            <td>{{stock[2]}}</td>
+                            <td>
+                                <a href="/admindelete?stockId={{stock[3]}}" class="btn btn-danger shadow-0">delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content%}

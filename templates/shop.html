@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Shop | Justech
+{% endblock %}
+
+{% block content %}
+<section class="shop">
+    <div class="p-4">
+        <div class="d-flex justify-content-center shop-welcome-contain align-items-center">
+            <div class="shop-welcome">
+                <p class="shop-welcome-text">Justech is the trading name of Justus Anthony Technologies Limited.
+    
+                    We strive to deliver the benefits of technology to individual and his communities. We aim to achieve
+                    this by partnering with local and international resources to deliver the optimal solution for our
+                    customers.
+            </div>
+        </div>
+    </div>
+    <div class="container mb-3">
+        <div class="row m-0">
+            {% if stocks %}
+
+                {% for stock in stocks %}
+
+                <div class="col-md-4 col-sm-6 p-4">
+                    <div class="selling-item">
+                        <div class="selling-item-img mb-1">
+                            <div class="overlay"></div>
+                            <img src="{{stock[3]}}" alt="">
+                            <a href="/add-cart?stockId={{stock[0]}}&prevPage=/shop" class="cart-btn p-2 text-center rounded-2 border"><i class="bi bi-plus"></i> Add To Cart</a>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">{{stock[1]}}</h5>
+                            <p class="mb-1 line-clamp">{{stock[2]}}</p>
+                            <p class="mb-1">${{ stock[4] }}</p>
+                            <a href="/add-cart?stockId={{stock[0]}}&prevPage=/shop" class="btn bg-main rounded-0 shadow-0 other-cart-btn">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="no-stock-container d-flex p-4 justify-content-center align-items-center">
+                    <div class="w-auto text-center">
+                        <i class="bi bi-exclamation-circle"></i>
+                        <p>No stock with name "{{ search }}" found</p>
+                    </div>
+                </div>
+
+            {% endif %}
+        </div>
+    </div>
+    
+</section>
+
+{% endblock content%}

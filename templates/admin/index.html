@@ -1,0 +1,30 @@
+{% extends '/admin/dashboard.html'%}
+
+{% block content %}
+
+<section class="home">
+    <div class="container">
+        <div class="row m-0 stats">
+            <div class="col-md-4">
+                <div class="bg-main p-4 my-2">
+                    <p class="name m-0">Users</p>
+                    <p class="value m-0">{{users}}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-main p-4 my-2">
+                    <p class="name m-0">Stocks</p>
+                    <p class="value m-0">{{stocks}}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-main p-4 my-2">
+                    <p class="name m-0">Orders</p>
+                    <p class="value m-0">{{orders}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content%}

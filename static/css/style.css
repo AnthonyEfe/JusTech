@@ -1,0 +1,251 @@
+*{
+    font-family: 'Qlassik Medium', sans-serif;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+a, a:hover{
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.animate_1s{
+    animation-delay: 1s;
+    -o-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+}
+
+.home-welcome-contain{
+    height: 300px;
+}
+.home-welcome{
+    width: 600px;
+    text-align: center;
+}
+.home-welcome .home-welcome-text{
+    font-size: 1.2em;
+    font-weight: 200px;
+}
+.home-search{
+    width: 320px;
+    border: 1px solid #444444;
+}
+.home-search input{
+    width: 85%;
+    outline: none;
+}
+.home-search .search-btn{
+    width: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.cus-input{
+    width: 300px;
+    height: 35px;
+    outline: none;
+    border: 1px solid grey;
+}
+.white-smoke{
+    background: whitesmoke;
+}
+.category .home-full{
+    height: 500px;
+}
+.category .home-split{
+    height: 248px;
+}
+.category .home-split img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.category .home-full img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.best-selling .selling-item-img{
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+.best-selling .selling-item-img .overlay{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+.best-selling .selling-item-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+.best-selling .selling-item-img .cart-btn{
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    background: white;
+    z-index: 4;
+    width: 60%;
+    transform: translateY(120px);
+    transition: .5s;
+}
+@media only screen and (min-width: 768px) {
+    .best-selling .selling-item-img:hover img{
+        transform: scale(1.1);
+    }
+    .best-selling .selling-item-img:hover .overlay{
+        z-index: 2;
+        display: block;
+    }
+    .best-selling .selling-item-img:hover .cart-btn{
+        transform: translateY(0);
+    }
+    .best-selling .other-cart-btn{
+        display: none;
+    }
+}
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.auth-container{
+    min-height: 90vh;
+}
+.auth-container .auth-contain{
+    width: 400px;
+}
+.bg-main{
+    background: #222222 !important;
+    color: white !important;
+}
+.shop-welcome-contain{
+    height: 450px;
+    background-image: url(https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&.v=1604347427000);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+.shop-welcome{
+    width: 600px;
+    text-align: center;
+}
+.shop-welcome .shop-welcome-text{
+    font-size: 1.2em;
+    font-weight: 200px;
+}
+.shop .selling-item-img{
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+.shop .selling-item-img .overlay{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+.shop .selling-item-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+.shop .selling-item-img .cart-btn{
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    background: white;
+    z-index: 4;
+    width: 60%;
+    transform: translateY(120px);
+    transition: .5s;
+}
+@media only screen and (min-width: 768px) {
+    .shop .selling-item-img:hover img{
+        transform: scale(1.1);
+    }
+    .shop .selling-item-img:hover .overlay{
+        z-index: 2;
+        display: block;
+    }
+    .shop .selling-item-img:hover .cart-btn{
+        transform: translateY(0);
+    }
+    .shop .other-cart-btn{
+        display: none;
+    }
+}
+.shop .no-stock-container{
+    height: 500px;
+    background: whitesmoke;
+    color: black;
+    border-radius: 10px;
+}
+.shop .no-stock-container i{
+    font-size: 4em;
+}
+.shop .no-stock-container  p{
+    font-size: 1.2em;
+}
+
+/* Profile Page */
+.profile .name-contain{
+    height: 200px;
+}
+
+.profile .name-contain p{
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.profile .form-contain{
+    width: 500px;
+}
+
+.cart .img-contain{
+    width: 100%;
+    height: 100%;
+}
+
+.cart .img-contain img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.cart .checkout{
+    position: sticky;
+    top: 18vh;
+}
+
+.cart .no-cart-contain{
+    height: 250px;
+}
+
+.cart .no-cart-contain i{
+    font-size: 3em;
+}
