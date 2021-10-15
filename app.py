@@ -79,7 +79,7 @@ def login():
 
         for user in users:
             if user[2] == email and user[3] == password:
-                # Set login session to user id
+                # Set login session to user id  
                 session["userLoggedIn"] = user[0]
                 return redirect('/')
                 break
